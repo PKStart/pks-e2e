@@ -1,0 +1,8 @@
+FROM cypress/included:10.4.0
+
+WORKDIR /
+COPY ./web-e2e ./app/web-e2e/
+WORKDIR /app
+RUN npm install typescript@4.7.4
+
+CMD ["npx", "cypress", "run", "--project", "./web-e2e/", "--browser", "chrome", "--headless"]
