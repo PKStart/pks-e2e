@@ -6,6 +6,7 @@ export const appBarPo = {
   notesBtn: () => cy.get('pk-app-bar button[mattooltip="Notes"]'),
   personalDataBtn: () => cy.get('pk-app-bar button[mattooltip="Personal data"]'),
   birthdaysBtn: () => cy.get('pk-app-bar button[mattooltip="Birthdays"]'),
+  mouseProfilesBtn: () => cy.get('pk-app-bar button[mattooltip="Mouse profiles"]'),
   moreBtn: () => cy.get('pk-app-bar button[mattooltip="More..."]'),
   notificationsBtn: () => cy.get('pk-notifications button'),
   notificationsMenu: () => cy.get('.mat-menu-panel.pk-notifications'),

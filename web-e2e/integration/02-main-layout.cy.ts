@@ -5,6 +5,7 @@ import { notesPo } from '../support/page-objects/notes.po'
 import { personalDataPo } from '../support/page-objects/personalData.po'
 import { shortcutsPo } from '../support/page-objects/shortcuts.po'
 import { weatherPo } from '../support/page-objects/weather.po'
+import { mouseProfilesPo } from '../support/page-objects/mouse-profiles.po'
 
 describe('Main page layout', () => {
   beforeEach(() => {
@@ -18,6 +19,7 @@ describe('Main page layout', () => {
     appBarPo.koreanBtn().should('be.visible')
     appBarPo.personalDataBtn().should('be.visible')
     appBarPo.birthdaysBtn().should('be.visible')
+    appBarPo.mouseProfilesBtn().should('be.visible')
     appBarPo.moreBtn().should('be.visible')
     appBarPo.notesBtn().should('not.exist')
     // appBarPo.notificationsBtn().should('not.exist') // sometimes location permission throws error :(
@@ -26,6 +28,7 @@ describe('Main page layout', () => {
     personalDataPo.box().should('not.exist')
     koreanPo.box().should('not.exist')
     birthdaysPo.box().should('not.exist')
+    mouseProfilesPo.box().should('not.exist')
     shortcutsPo.menu().should('be.visible')
     shortcutsPo.menuButtons().should('have.length', 5)
   })
@@ -64,6 +67,13 @@ describe('Main page layout', () => {
     birthdaysPo.closeBtn().click()
     birthdaysPo.box().should('not.exist')
     appBarPo.birthdaysBtn().should('be.visible')
+
+    appBarPo.mouseProfilesBtn().click()
+    mouseProfilesPo.box().should('be.visible')
+    appBarPo.mouseProfilesBtn().should('not.exist')
+    mouseProfilesPo.closeBtn().click({ force: true }) // force due to error message snackbar
+    mouseProfilesPo.box().should('not.exist')
+    appBarPo.mouseProfilesBtn().should('be.visible')
   })
 
   it('Should have the "More" menu with proper contents', () => {
