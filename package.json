@@ -9,7 +9,8 @@
     "format:check": "prettier --check \"web-e2e/**/*.{js,ts,json}\"",
     "lint": "eslint \"web-e2e/**/*.{js,ts}\" --fix",
     "watch:web": "cypress open --project ./web-e2e/",
-    "test:web": "cypress run --project ./web-e2e/"
+    "test:web": "cypress run --project ./web-e2e/",
+    "test:web:docker": "docker-compose -f docker/web-e2e/docker-compose.web-e2e.yml up --build --exit-code-from cypress && docker-compose -f docker/web-e2e/docker-compose.web-e2e.yml down -v"
   },
   "repository": {
     "type": "git",

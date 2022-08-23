@@ -18,7 +18,11 @@ Frontend e2e tests can run in two ways:
 > For each fresh test run the DB should be cleared using `npm run clear:db` and then `npm run start:db` in the `pks-api` repository.
 
 
-TODO: Testing in Docker
------------------------
+Testing in Docker
+-----------------
 
-- [ ] Update the old docker files for the new repo structure
+It is now possible to run all Web e2e tests in a completely encapsulated docker environment. **Note** that this workflow will actually pull the current `develop` branch of the `pks-api` and `pks-web` applications directly from Github, and it is not using the local files!
+To run the tests this way:
+```shell
+npm run test:web:docker
+```

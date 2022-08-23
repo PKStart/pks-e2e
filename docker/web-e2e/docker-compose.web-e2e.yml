@@ -16,7 +16,7 @@ services:
   api:
     build:
       context: "../../"
-      dockerfile: ./docker/main-test/Dockerfile.api
+      dockerfile: ./docker/web-e2e/Dockerfile.api
     environment:
       PK_ENV: development
       PK_DB_CONNECTION_STRING: mongodb://pkstartdev:pkstartdev@mongodb_server:27017/pkstartdev
@@ -32,18 +32,18 @@ services:
     depends_on:
       - mongodb_server
 
-  main:
+  web:
     build:
       context: "../../"
-      dockerfile: ./docker/main-test/Dockerfile.main
+      dockerfile: ./docker/web-e2e/Dockerfile.web
     depends_on:
       - api
 
   cypress:
     build:
       context: "../../"
-      dockerfile: ./docker/main-test/Dockerfile.cypress
+      dockerfile: ./docker/web-e2e/Dockerfile.cypress
     environment:
-      CYPRESS_baseUrl: http://main
+      CYPRESS_baseUrl: http://web
     depends_on:
-      - main
+      - web
