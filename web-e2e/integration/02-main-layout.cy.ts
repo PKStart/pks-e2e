@@ -30,7 +30,7 @@ describe('Main page layout', () => {
     birthdaysPo.box().should('not.exist')
     mouseProfilesPo.box().should('not.exist')
     shortcutsPo.menu().should('be.visible')
-    shortcutsPo.menuButtons().should('have.length', 5)
+    shortcutsPo.menuButtons().should('have.length', 6)
   })
 
   it('Should be possible to switch widgets on and off', () => {

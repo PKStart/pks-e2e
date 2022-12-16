@@ -8,7 +8,7 @@ describe('Shortcuts', () => {
 
   it('Should have the initial shortcuts and the menu should work', () => {
     po.menu().should('be.visible')
-    po.menuButtons().should('have.length', 5)
+    po.menuButtons().should('have.length', 6)
     po.backdrop().should('not.exist')
     po.menuButton(0).click()
     po.backdrop().should('be.visible')
