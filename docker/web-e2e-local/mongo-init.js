@@ -142,6 +142,16 @@ db.getCollection('shortcuts').insertMany([
     url: 'https://docs.google.com/',
   },
   {
+    id: 'bf2c0ef2-17ec-44c6-98b6-fbe2c008058d',
+    userId: 'a06ef9a2-d1ff-417d-bce7-75188a6118c1',
+    createdAt: new Date(),
+    priority: 1,
+    name: 'GCN',
+    url: 'https://www.globalcyclingnetwork.com/',
+    category: 'CYCLING',
+    iconUrl: 'gnc.png',
+  },
+  {
     id: 'cf1c0ef2-17ec-44c6-98b6-fbe2c008058e',
     userId: 'a06ef9a2-d1ff-417d-bce7-75188a6118c1',
     createdAt: new Date(),
